@@ -1,7 +1,12 @@
 package com.marketpulse.core.pingpong;
 
 import java.util.HashMap;
-
+/**
+ * <p>
+ * Refree class provides information about the games and player.
+ * we can get the information about particular game. Score of both player and who win etc.
+ * </p>
+ */
 public class Refree {
 
 	// refree class will also works as game manager .. Refree monitor everything.
