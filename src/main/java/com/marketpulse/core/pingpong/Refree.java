@@ -34,6 +34,10 @@ public class Refree {
 		});
 	}
 
+	public static Game getGameDetails(Integer gameid) {
+		return GAME_MANAGER.get(gameid);
+	}
+	
 	public static void winner() {
 		System.out.println("================== Final winner of this game ==================");
 		Championship.WINNER.forEach((k, v) -> {
