@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class Championship {
 
+	
 	public static Map<Integer, Map<String, Integer>> WINNER = new HashMap<Integer, Map<String, Integer>>();
 
 	public boolean startGame(Game game, Player player1, Player player2, Map<Integer, Integer> gamescore) {

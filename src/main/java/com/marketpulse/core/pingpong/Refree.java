@@ -5,7 +5,6 @@ import java.util.HashMap;
 public class Refree {
 
 	// refree class will also works as game manager .. Refree monitor everything.
-
 	public static HashMap<Integer, Game> GAME_MANAGER = new HashMap<Integer, Game>();
 
 	Player thewinner;
