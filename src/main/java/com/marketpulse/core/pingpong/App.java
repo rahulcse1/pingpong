@@ -1,5 +1,14 @@
 package com.marketpulse.core.pingpong;
 
+/**
+ * 
+ * <p>
+ * Main class to run the App. This class serve as entry point for the
+ * Championship.
+ * </p>
+ *
+ *
+ */
 public class App {
 	
 	public static void main(String[] args) {
