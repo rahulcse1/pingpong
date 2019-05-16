@@ -2,7 +2,11 @@ package com.marketpulse.core.pingpong;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * <p>
+ * Game domain class that hold the information for Game.
+ * </p>
+ */
 public class Game {
 
 	// need for monitoring the game/ saving the game info
