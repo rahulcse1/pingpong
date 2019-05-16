@@ -6,6 +6,8 @@ import java.util.Set;
 
 public class Championship {
 
+	public static Map<Integer, Map<String, Integer>> WINNER = new HashMap<Integer, Map<String, Integer>>();
+
 	public boolean startGame(Game game, Player player1, Player player2, Map<Integer, Integer> gamescore) {
 
 		int randomNum = Utils.getRandom();
@@ -45,8 +47,8 @@ public class Championship {
 		// repeat the process till the real winner.
 
 		Set<Integer> playerids = PLAYER_MATRIX.keySet();
-		Map<Integer, Map<String, Integer>> dummuObj = new HashMap<Integer, Map<String, Integer>>();
-		dummuObj.putAll(PLAYER_MATRIX);
+		Map<Integer, Map<String, Integer>> PLAYER_MATRIX_CLONE = new HashMap<Integer, Map<String, Integer>>();
+		PLAYER_MATRIX_CLONE.putAll(PLAYER_MATRIX);
 
 		while (PLAYER_MATRIX.size() > 1) {
 			Integer playerid1 = Utils.getRandomPlayerid();
@@ -78,12 +80,15 @@ public class Championship {
 
 				PLAYER_MATRIX.remove(winnerid);
 				PLAYER_MATRIX.remove(looserid);
-				dummuObj.remove(looserid);
+				PLAYER_MATRIX_CLONE.remove(looserid);
 			}
 		}
-		if (dummuObj.size() > 1) {
-			PLAYER_MATRIX.putAll(dummuObj);
-			startChampionship(dummuObj);
+		if (PLAYER_MATRIX_CLONE.size() == 1) {
+			WINNER.putAll(PLAYER_MATRIX_CLONE);
+		}
+		if (PLAYER_MATRIX_CLONE.size() > 1) {
+			PLAYER_MATRIX.putAll(PLAYER_MATRIX_CLONE);
+			startChampionship(PLAYER_MATRIX_CLONE);
 		}
 	}
 
