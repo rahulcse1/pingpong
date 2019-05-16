@@ -2,6 +2,11 @@ package com.marketpulse.core.pingpong;
 
 import java.util.Arrays;
 
+/**
+ * <p>
+ * Player domain class that hold the information for player.
+ * </p>
+ */
 public class Player {
 
 	private Integer playerid;
