@@ -8,6 +8,18 @@ public class Championship {
 
 	public static Map<Integer, Map<String, Integer>> WINNER = new HashMap<Integer, Map<String, Integer>>();
 
+	/**
+	 * <p>
+	 * Calculate the game point for each player based on the problem statement.
+	 * {@link: https://paper.dropbox.com/doc/Backend-Coding-Challenge-khIj3GOBa7YKk0qrI9oP9}
+	 * </p>
+	 * 
+	 * @param game
+	 * @param player1
+	 * @param player2
+	 * @param gamescore
+	 * @return
+	 */
 	public boolean startGame(Game game, Player player1, Player player2, Map<Integer, Integer> gamescore) {
 
 		int randomNum = Utils.getRandom();
@@ -41,6 +53,21 @@ public class Championship {
 		return true;
 	}
 
+	/**
+	 * <p>
+	 * Start of championship. we are basically keeping track of match by holding the
+	 * information in two hashmap. we are removing the 2 player at a time from
+	 * Original map PLAYER_MATRIX once game done between them. And putting winner
+	 * details in a temp map PLAYER_MATRIX_CLONE. then copying PLAYER_MATRIX_CLONE
+	 * into PLAYER_MATRIX for next iteration.
+	 * 
+	 * After all the games are done. PLAYER_MATRIX will contain the only one entry.
+	 * thats the winner details. Any player need to win 3 games to win the
+	 * tournament.
+	 * </p>
+	 * 
+	 * @param PLAYER_MATRIX
+	 */
 	public void startChampionship(Map<Integer, Map<String, Integer>> PLAYER_MATRIX) {
 
 		// take 2 random player - 4 pair parallel - remove loser from the list.

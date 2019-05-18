@@ -44,6 +44,21 @@ public class AppTest extends TestCase {
 		assertTrue(startGame);
 	}
 
+	public void testPlayerMatrix() {
+		Map<Integer, Map<String, Integer>> pLAYER_MATRIX = Utils.PLAYER_MATRIX;
+		Map<String, Integer> player3 = pLAYER_MATRIX.get(3);
+
+		assertEquals(player3.keySet().iterator().next(), "Chandler");
+		assertEquals((int) player3.get("Chandler"), 6);
+	}
+
+	public void testPlayerUtils() {
+		String playerName = Utils.getPlayerName(7);
+		Integer playerDefensiveSize = Utils.getPlayerDefensiveSize(7);
+		assertEquals(playerName, "Sachin");
+		assertEquals((int) playerDefensiveSize, 4);
+	}
+
 	public void testPreparePlayer() {
 
 		Integer gameid = 1;
