@@ -1,10 +1,11 @@
 package com.marketpulse.core.pingpong;
 
 import java.util.HashMap;
+
 /**
  * <p>
- * Refree class provides information about the games and player.
- * we can get the information about particular game. Score of both player and who win etc.
+ * Refree class provides information about the games and player. we can get the
+ * information about particular game. Score of both player and who win etc.
  * </p>
  */
 public class Refree {
@@ -14,6 +15,15 @@ public class Refree {
 
 	Player thewinner;
 
+	/**
+	 * <p>
+	 * save the game info. currently map hold the information.
+	 * </p>
+	 * TODO: save in database.
+	 * 
+	 * @param gameid
+	 * @param game
+	 */
 	public static void saveGameStatus(Integer gameid, Game game) {
 		GAME_MANAGER.put(gameid, game);
 	}
@@ -23,6 +33,9 @@ public class Refree {
 		listAllGames();
 	}
 
+	/**
+	 * list out all the games played in the championship.
+	 */
 	private static void listAllGames() {
 		GAME_MANAGER.forEach((k, v) -> {
 			System.out.println("================== Game Details for Game Id : " + k + " ==================");
@@ -34,14 +47,26 @@ public class Refree {
 		});
 	}
 
+	/**
+	 * <p>
+	 * Return the particular game information.
+	 * </p>
+	 * 
+	 * @param gameid
+	 * @return
+	 */
 	public static Game getGameDetails(Integer gameid) {
 		return GAME_MANAGER.get(gameid);
 	}
-	
+
+	/**
+	 * final winner.
+	 */
 	public static void winner() {
 		System.out.println("================== Final winner of this game ==================");
 		Championship.WINNER.forEach((k, v) -> {
 			System.out.println("Player, who won the tournament: " + v.keySet().iterator().next());
 		});
 	}
+	
 }
