@@ -13,8 +13,6 @@ public class Refree {
 	// refree class will also works as game manager .. Refree monitor everything.
 	public static HashMap<Integer, Game> GAME_MANAGER = new HashMap<Integer, Game>();
 
-	Player thewinner;
-
 	/**
 	 * <p>
 	 * save the game info. currently map hold the information.
@@ -29,7 +27,6 @@ public class Refree {
 	}
 
 	public static void generateReport() {
-		// all the games with player details and score.
 		listAllGames();
 	}
 
