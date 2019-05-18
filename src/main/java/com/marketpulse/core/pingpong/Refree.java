@@ -22,7 +22,7 @@ public class Refree {
 	 * @param gameid
 	 * @param game
 	 */
-	public static void saveGameStatus(Integer gameid, Game game) {
+	public void saveGameStatus(Integer gameid, Game game) {
 		GAME_MANAGER.put(gameid, game);
 	}
 
@@ -52,7 +52,7 @@ public class Refree {
 	 * @param gameid
 	 * @return
 	 */
-	public static Game getGameDetails(Integer gameid) {
+	public Game getGameDetails(Integer gameid) {
 		return GAME_MANAGER.get(gameid);
 	}
 
@@ -65,5 +65,5 @@ public class Refree {
 			System.out.println("Player, who won the tournament: " + v.keySet().iterator().next());
 		});
 	}
-	
+
 }
